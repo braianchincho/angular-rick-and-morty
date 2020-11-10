@@ -1,0 +1,24 @@
+<nav>
+	<ul class="pagination">
+		<li class="page-item text-primary">
+			<a class="page-link page-previous" (click)="pagePrevious()">Previous</a>
+		</li>
+		<li class="page-item text-primary">
+			<a class="page-link page-all-previous" (click)="pageSlice(-5)">
+				{{'<<'}}
+			</a>
+		</li>
+		<li class="page-item text-primary" *ngFor="let item of pages | slice : start : start + 5; index as i"
+			[ngClass]="page === item ? 'active' : ''" (click)="onNavChange(item)">
+			<a class="page-link">{{item}}</a>
+		</li>
+		<li class="page-item text-primary">
+			<a class="page-link page-all-next" (click)="pageSlice(5)">
+				{{'>>'}}
+			</a>
+		</li>
+		<li class="page-item text-primary">
+			<a class="page-link page-next" (click)="pageNext()">Next</a>
+		</li>
+	</ul>
+</nav>
