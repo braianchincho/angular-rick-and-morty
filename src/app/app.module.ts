@@ -9,6 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { PaginationComponent } from "./pagination/pagination.component";
 import { CharacterListComponent } from "./character-list/character-list.component";
 import { RoutesModule } from "./routes/routes.module";
+import { CharacterComponent } from './character/character.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule, RoutesModule],
@@ -16,7 +17,8 @@ import { RoutesModule } from "./routes/routes.module";
     AppComponent,
     HelloComponent,
     PaginationComponent,
-    CharacterListComponent
+    CharacterListComponent,
+    CharacterComponent
   ],
   providers: [CharactersService],
   bootstrap: [AppComponent]

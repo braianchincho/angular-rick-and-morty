@@ -6,12 +6,8 @@
 			</div>
 		</div>
 		<ng-container *ngFor="let character of characters">
-			<div class="card col-12 col-sm-4 col-md-4">
-				<img class="card-img-top" [src]="character.image" [alt]="character.name" >
-				<div class="card-body">
-					<h4 class="card-title">{{ character.name }}</h4>
-					<p class="card-text">{{ character.status }} - {{character.species}} </p>
-				</div>
+			<div class="col-12 col-sm-4 col-md-4">
+				<app-character [character]="character"></app-character>
 			</div>
 		</ng-container>
 	</div>
