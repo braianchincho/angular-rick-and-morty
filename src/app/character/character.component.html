@@ -22,18 +22,12 @@
     <p class="card-text">
       <strong>Location: </strong> {{ character?.location?.name}}
     </p>
-    <button
-      type="button"
-      data-toggle="collapse"
-      attr.data-target="#collapse{{id}}"
-      aria-expanded="false"
-      attr.aria-controls="collapse{{id}}"
-    >
-      List of episodes
+    <button type="button" (click)="collapsed = !collapsed">
+      List of episodes {{collapsed}}
     </button>
-    <div class="collapse" id="collapseExample">
+    <div [@collapse]="collapsed">
       <ul>
-        <ng-container *ngFor="let op of character.episodes">
+        <ng-container *ngFor="let op of character.episode">
           <li>{{ op }}</li>
         </ng-container>
       </ul>

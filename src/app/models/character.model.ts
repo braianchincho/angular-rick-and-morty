@@ -14,4 +14,5 @@ export class Character {
   episode: string[];
   url: string;
   created: Date;
+  collapse = false;
 }
