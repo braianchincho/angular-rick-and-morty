@@ -1,23 +1,42 @@
 <div class="card">
-	<div class="card-header bg-white">
-		<h4 class="card-title text-center">{{ character?.name }}</h4>
-	</div>
-	<img class="card-img-top" [src]="character.image" [alt]="character.name" >
-	<div class="card-body">
-		<p class="card-text">
-			<strong>Status: </strong><span [ngClass]="{
+  <div class="card-header bg-white">
+    <h4 class="card-title text-center">{{ character?.name }}</h4>
+  </div>
+  <img class="card-img-top" [src]="character.image" [alt]="character.name" />
+  <div class="card-body">
+    <p class="card-text">
+      <strong>Status: </strong
+      ><span
+        [ngClass]="{
         'text-success': character.status === 'Alive',
         'text-danger': character.status === 'Dead',
         'text-dark': character.status === 'unknown'
-      }">{{ character?.status }}</span>
-		</p>
-		<p class="card-text">
-			<strong>Specie: </strong>{{ character?.species }}</p>
-		<p class="card-text">
-			<strong>Origin: </strong>{{ character?.origin?.name}}
-		</p>
-		<p class="card-text">
-			<strong>Location: </strong> {{ character?.location?.name}}
-		</p>
-	</div>
+      }"
+        >{{ character?.status }}</span
+      >
+    </p>
+    <p class="card-text"><strong>Specie: </strong>{{ character?.species }}</p>
+    <p class="card-text">
+      <strong>Origin: </strong>{{ character?.origin?.name}}
+    </p>
+    <p class="card-text">
+      <strong>Location: </strong> {{ character?.location?.name}}
+    </p>
+    <button
+      type="button"
+      data-toggle="collapse"
+      attr.data-target="#collapse{{id}}"
+      aria-expanded="false"
+      attr.aria-controls="collapse{{id}}"
+    >
+      List of episodes
+    </button>
+    <div class="collapse" id="collapseExample">
+      <ul>
+        <ng-container *ngFor="let op of character.episodes">
+          <li>{{ op }}</li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
 </div>
